@@ -25,3 +25,10 @@
   color: #FFFFFF;
 }
 
+#top-images {
+  display: flex;
+}
+
+.top-image {
+  width: 400px;
+}

@@ -3,10 +3,10 @@ import React from "react";
 function Home ({images}) {
     return (
         <>
-            <div>
-                <img src={images[0]} alt="left"></img>
-                <img src={images[1]} alt="centre"></img>
-                <img src={images[2]} alt="right"></img>
+            <div id="top-images">
+                <img className="top-image" src={images[0]} alt="left"></img>
+                <img className="top-image" src={images[1]} alt="centre"></img>
+                <img className="top-image" src={images[2]} alt="right"></img>
             </div>
             <div>
                 <img src={images[3]} alt="Meal of The Week"></img>
