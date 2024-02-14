@@ -1,5 +1,6 @@
-
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+
 
 function Filter({ recipes }) {
     const [difficultyFilter, setDifficultyFilter] = useState('All');
@@ -26,6 +27,7 @@ function Filter({ recipes }) {
                         <p>Cuisine: {recipe.cuisine}</p>
                         <p>Difficulty: {recipe.difficulty}</p>
                         <p>Serving: {recipe.serving}</p>
+                        <NavLink to={`/food/${recipe.id}`}>Get Recipe</NavLink>
                         <img src={recipe.image} alt={recipe.name} style={{ width: '200px', height: 'auto' }} />
                     </li>
                 ))}

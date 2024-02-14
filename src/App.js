@@ -26,7 +26,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route exact path='/' element={<Home images={images}/>}/>
-        <Route exact path='/food/:id' element={<ReadRecipe/>}/>
+        <Route exact path='/food/:id' element={<ReadRecipe recipes={recipes}/>}/>
         <Route exact path='/food' element={<Food recipes={recipes}/>}/>
       </Routes>
     </BrowserRouter>
