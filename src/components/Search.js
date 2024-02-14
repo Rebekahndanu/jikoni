@@ -4,6 +4,7 @@ function Search({ recipes }){
 
     const[food,setFood] = useState("")
     const[searchResult, setSearchResult] = useState(null)
+    const[error, setError] = useState("")
 
     function handleSearch(event){
         setFood(event.target.value)
@@ -14,18 +15,22 @@ function Search({ recipes }){
         const result = recipes.find(recipe => recipe.name.toLowerCase() === food.toLowerCase())
             if(result){
                 setSearchResult(result);
+                setError("")
             }else{
                 setSearchResult(null)
                 console.log('Food Not Found')    
-            }  
+                setError("Oops! The Food you are looking for is not found. Please try agin later.")  
+            }            
     }
-
+    
     return (  
         <div>
             <form onSubmit={handleSubmit}>
                 <input type="text" onChange={handleSearch} placeholder="Food..."/>
                 <button type="submit" >Search</button>
             </form>
+
+            {error && <p>{error}</p>}
 
             {searchResult && (
                 <div>
