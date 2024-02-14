@@ -4,8 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Home from './components/Home';
 import Food from './components/Food';
-import Filter from "./components/Filter";
-
+import ReadRecipe from './components/ReadRecipe';
 
 function App() {
 
@@ -22,9 +21,9 @@ function App() {
   return (
     <BrowserRouter>
       <NavBar />
-      <Filter/>
       <Routes>
         <Route exact path='/' element={<Home images={images}/>}/>
+        <Route exact path='/food/:id' element={<ReadRecipe/>}/>
         <Route exact path='/food' element={<Food/>}/>
       </Routes>
     </BrowserRouter>
