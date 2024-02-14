@@ -14,6 +14,9 @@ function App() {
     fetch('https://jikoni-vercel.vercel.app/recipes')
     .then((res) => res.json())
     .then((data) => setRecipes(data))
+    .catch(error => {
+      console.error("Error fetching data:", error);
+  })
   }, [])
 
   const images = recipes.map((recipe) => recipe.image)  
@@ -24,7 +27,7 @@ function App() {
       <Routes>
         <Route exact path='/' element={<Home images={images}/>}/>
         <Route exact path='/food/:id' element={<ReadRecipe/>}/>
-        <Route exact path='/food' element={<Food/>}/>
+        <Route exact path='/food' element={<Food recipes={recipes}/>}/>
       </Routes>
     </BrowserRouter>
   );

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Search(){
+function Search({ recipes }){
 
     const[food,setFood] = useState("")
     const[searchResult, setSearchResult] = useState(null)
@@ -11,24 +11,13 @@ function Search(){
 
     function handleSubmit(event){
         event.preventDefault();
-
-        fetch("./db.json")
-        .then(response=>response.json())
-        .then((data)=>{
-
-            const result = data.recipes.find(item => item.name.toLowerCase() === food.toLowerCase())
+        const result = recipes.find(recipe => recipe.name.toLowerCase() === food.toLowerCase())
             if(result){
                 setSearchResult(result);
             }else{
                 setSearchResult(null)
-                console.log('Food Not Found')
-                 
-            }
-            
-        })
-        .catch(error => {
-            console.error("Error fetching data:", error);
-        });
+                console.log('Food Not Found')    
+            }  
     }
 
     return (  
@@ -47,7 +36,7 @@ function Search(){
                     <p>It takes {searchResult['cook-time']} to cook</p>
                     <p>It takes {searchResult['total-time']} to cook and prepare</p>
                     <p>The meal serves {searchResult.serving} people</p>
-                    <img src={searchResult.image} alt="image"/>
+                    <img src={searchResult.image} alt="food"/>
                     <p>Description: {searchResult.description}</p>
                     <ul>Ingredients:
                     {searchResult.ingredients.map((ingredient, index)=>(

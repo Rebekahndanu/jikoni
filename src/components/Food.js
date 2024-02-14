@@ -1,12 +1,12 @@
  import Search from "./Search";
  import Filter from "./Filter";
 
- function Food(){
+ function Food({ recipes }){
 
     return ( 
         <div>
-            <Search/>
-            <Filter/>
+            <Search recipes={recipes}/>
+            <Filter recipes={recipes}/>
         </div>
      );
 }
