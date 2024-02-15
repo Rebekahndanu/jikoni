@@ -7,7 +7,7 @@ import ReadRecipe from './components/ReadRecipe';
 import AddRecipe from './components/AddRecipe';
 import Footer from './components/Footer';
 import NavBar from './components/NavBar';
-
+import AddRecipe from './components/AddRecipe';
 
 function App() {
 
