@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import "./Featured.css";
+import { NavLink } from 'react-router-dom';
 
 const FeaturedRecipe = () => {
   const [featuredRecipe, setFeaturedRecipe] = useState(null);
@@ -30,7 +31,9 @@ const FeaturedRecipe = () => {
             <h3 className="recipe-title">{featuredRecipe.name}</h3>
             <p className="recipe-description">Cuisine: {featuredRecipe.cuisine}</p>
             <p className="recipe-description">Difficulty: {featuredRecipe.difficulty}</p>
-            <button className='recipe-button'>View Recipe</button>
+            <p className='recipe-button'>
+              <NavLink to={`/food/${featuredRecipe.id}`}>View Recipe</NavLink>
+            </p>
           </div>
           <img
             src={featuredRecipe.image} 
