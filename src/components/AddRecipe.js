@@ -54,35 +54,35 @@ function AddRecipe() {
         <label>
           Recipe Name:
           <input type="text" name="name" value={recipe.name} onChange={handleInputChange} required />
-        </label>
+        </label><br/>
         <label>
           Cuisine:
           <input type="text" name="cuisine" value={recipe.cuisine} onChange={handleInputChange} required />
-        </label>
+        </label><br/>
         <label>
           Difficulty:
           <input type="text" name="difficulty" value={recipe.difficulty} onChange={handleInputChange} required />
-        </label>
+        </label><br/>
         <label>
           Prep Time:
           <input type="text" name="prep-time" value={recipe['prep-time']} onChange={handleInputChange} required />
-        </label>
+        </label><br/>
         <label>
           Cook Time:
           <input type="text" name="cook-time" value={recipe['cook-time']} onChange={handleInputChange} required />
-        </label>
+        </label><br/>
         <label>
           Total Time:
           <input type="text" name="total-time" value={recipe['total-time']} onChange={handleInputChange} required />
-        </label>
+        </label><br/>
         <label>
           Serving:
           <input type="text" name="serving" value={recipe.serving} onChange={handleInputChange} required />
-        </label>
+        </label><br/>
         <label>
           Image URL:
           <input type="text" name="image" value={recipe.image} onChange={handleInputChange} required />
-        </label>
+        </label><br/>
         <label>
           Ingredients:
           {recipe.ingredients.map((ingredient, index) => (
@@ -97,7 +97,7 @@ function AddRecipe() {
           <button type="button" onClick={() => setRecipe({ ...recipe, ingredients: [...recipe.ingredients, ''] })}>
             Add Ingredient
           </button>
-        </label>
+        </label><br/>
         <button type="submit">Submit</button>
       </form>
     </div>
