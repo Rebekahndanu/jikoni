@@ -5,6 +5,7 @@ import NavBar from './components/NavBar';
 import Home from './components/Home';
 import Food from './components/Food';
 import ReadRecipe from './components/ReadRecipe';
+import footer from './components/Footer';
 
 function App() {
 

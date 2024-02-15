@@ -1,6 +1,6 @@
 export default function footer () {
    return (
-    <div className="footer">
+    <div className="footer container">
         <div className="footer-section">
             <p className="title">Jikoni.com</p>
             <p>The fabric of Jikoni was born ot of love and respect for these humble deli
