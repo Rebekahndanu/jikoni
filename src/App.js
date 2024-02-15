@@ -6,6 +6,7 @@ import Food from './components/Food';
 import ReadRecipe from './components/ReadRecipe';
 import Footer from './components/Footer';
 import NavBar from './components/NavBar';
+import AddRecipe from './components/AddRecipe';
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
         <Route exact path='/' element={<Home images={images}/>}/>
         <Route exact path='/food/:id' element={<ReadRecipe/>}/>
         <Route exact path='/food' element={<Food recipes={recipes}/>}/>
+        <Route exact path='/add' element={<AddRecipe/>}/>
       </Routes>
     <Footer/>
     </BrowserRouter>

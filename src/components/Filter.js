@@ -6,7 +6,7 @@ function Filter({ recipes }) {
     const [difficultyFilter, setDifficultyFilter] = useState('All');
 
     const handleChange = (difficulty) => {
-        setDifficultyFilter(difficulty);
+        setDifficultyFilter(difficulty)
     };
 
     // Filter recipes based on the difficulty level
@@ -33,7 +33,7 @@ function Filter({ recipes }) {
                         <p className='food-description'>Difficulty: {recipe.difficulty}</p>
                         <p className='food-description'>Serving: {recipe.serving}</p>
                         <p>
-                            <NavLink to={`/food/${recipe.id}`} className='recipe-link-button'>Get Recipe</NavLink>
+                            <NavLink className='recipe-link-button' to={`/food/${recipe.id}`}>Get Recipe</NavLink>  
                         </p>
                     </div>
                 ))}
