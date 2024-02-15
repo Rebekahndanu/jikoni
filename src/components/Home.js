@@ -1,24 +1,69 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons'; 
+import "./Home.css";
+import sliderData from "./sliderData";
+import FeaturedRecipe from "./FeaturedRecipe";
 
-function Home ({images}) {
+function Home() {
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const slideLength = sliderData.length;
+
+    const autoScroll = true;
+    let slideInterval;
+    let intervalTime = 5000;
+
+    const nextSlide = () => {
+        setCurrentIndex(currentIndex === slideLength -1 ? 0 : currentIndex + 1)
+    }
+
+    const prevSlide = () => {
+        setCurrentIndex(currentIndex === 0 ? slideLength - 1 : currentIndex - 1);
+    }
+
+    function auto() {
+        slideInterval = setInterval(nextSlide, intervalTime)
+    }
+
+    useEffect(() => {
+        setCurrentIndex(0)
+    },[])
+
+    useEffect(() => {
+        if (autoScroll) {
+            auto();
+        }  
+        return () => clearInterval(slideInterval)  
+        // eslint-disable-next-line
+    },[currentIndex]);
+
     return (
         <>
-            <div id="top-images">
-                <img className="top-image" src={images[0]} alt="left"></img>
-                <img className="top-image" src={images[1]} alt="centre"></img>
-                <img className="top-image" src={images[2]} alt="right"></img>
-            </div>
-            <div>
-                <img src={images[3]} alt="Meal of The Week"></img>
-                <h2>Featured Recipe of The Week</h2>
-                <h4>Get Recipe</h4>
-            </div>
-            <div>
-                <h2>Welcome to JIKONI Where Flavor Meets Inspiration!</h2>
-                <img src={images[4]} alt="Nyama Choma"></img>
-            </div>
+        <div className="slider">
+            <FontAwesomeIcon icon={faArrowLeft} className="arrow prev" onClick={prevSlide} />
+            <FontAwesomeIcon icon={faArrowRight} className="arrow next" onClick={nextSlide} /> 
+
+            {sliderData.map((slide, index) => (
+                <div className={index === currentIndex ? "current slide" : "slide"} key={index}>
+                    {index === currentIndex && (
+                        <>
+                            <img src={slide.image} alt="slide" />
+                            <div className="content">
+                                <h2>{slide.title}</h2>
+                                <p>{slide.body}</p>
+                                <hr />
+                                <button className="homebtn">Get Started</button>
+                            </div>
+                        </>
+                    )}
+                </div>
+            ))}
+        </div>
+        <FeaturedRecipe />
         </>
-    )
+        
+    );
 }
 
 export default Home;
+

@@ -1,5 +1,11 @@
+
 #navbar {
-  background-color: #F1AA27;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; 
+
 }
 
 #navbar ul {
@@ -10,7 +16,7 @@
   list-style-type: none;
 }
 
-#navbar ul #id{
+#navbar ul #jikoni-navbar{
   display: flex;
   justify-content: flex-start;
 }
