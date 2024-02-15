@@ -21,13 +21,13 @@ function ReadRecipe () {
         <>
             <div>
                 <h2>{recipe.name}</h2>
+                <img src={recipe.image} alt="food"/>
                 <p>Cuisine: {recipe.cuisine}</p>
                 <p>Difficulty: {recipe.difficulty}</p>
                 <p>It takes {recipe['prep-time']} to prepare</p>
                 <p>It takes {recipe['cook-time']} to cook</p>
                 <p>It takes {recipe['total-time']} to cook and prepare</p>
                 <p>The meal serves {recipe.serving} people</p>
-                <img src={recipe.image} alt="food"/>
                 <p>Description: {recipe.description}</p>
                 <ul>Ingredients:
                 {recipe.ingredients.map((ingredient, index)=>(
