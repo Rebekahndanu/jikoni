@@ -37,18 +37,6 @@
     text-align: center;
 }
 
-.get-button {
-    border-radius: 50px;
-    padding: 10px 38px;
-    background-color: white;
-    margin-right: 15px;
-    color: brown; /* Add this line */
-}
-
-.get-button:hover {
-    background-color: white;
-    color: brown;
-}
 
 .difficulty-filter{
     align-items: center;
@@ -64,4 +52,20 @@
     padding-top: 10px;
     padding-bottom: 10px;
     border-radius: 5px;
+}
+.recipe-link-button {
+    display: inline-block;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    background-color: brown; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.recipe-link-button:hover {
+    background-color: rgb(78, 20, 20); 
 }
