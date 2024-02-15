@@ -1,24 +1,23 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-
-
+import "./Navbar.css"
+  
 function NavBar () {
-    return (
-        <nav id="navbar">
-            <ul>
-                <li id="jikoni-navbar">
-                    <NavLink exact to="/">Jikoni</NavLink>
-                </li>
+    return(
+        <div className="nav">
+            <div className="nav-logo">Jik<span>oni</span></div>
+            <ul className="nav-menu">
                 <li>
                     <NavLink exact to="/">Home</NavLink>
                 </li><li>
                     <NavLink exact to="/food">Food</NavLink>
-                </li><li>
+                </li><li className="home-button">
                     <NavLink exact to="/add">Add Recipe</NavLink>
                 </li>
             </ul>
-        </nav>
+        </div>
     )
 }
+
 
 export default NavBar;

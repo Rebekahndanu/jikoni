@@ -4,8 +4,9 @@ import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import "./Home.css";
 import sliderData from "./sliderData";
 import FeaturedRecipe from "./FeaturedRecipe";
+import { NavLink } from "react-router-dom";
 
-function Home() {
+function Home({recipes}) {
     const [currentIndex, setCurrentIndex] = useState(0);
     const slideLength = sliderData.length;
 
@@ -51,15 +52,16 @@ function Home() {
                             <div className="content">
                                 <h2>{slide.title}</h2>
                                 <p>{slide.body}</p>
-                                <hr />
-                                <button className="homebtn">Get Started</button>
+                                <p className="homebtn">
+                                    <NavLink exact to="/food">Get Started</NavLink>
+                                </p>
                             </div>
                         </>
                     )}
                 </div>
             ))}
         </div>
-        <FeaturedRecipe />
+        <FeaturedRecipe recipes={recipes}/>
         </>
         
     );

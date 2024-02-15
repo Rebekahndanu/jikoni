@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import NavBar from './components/NavBar';
 import Home from './components/Home';
 import Food from './components/Food';
 import ReadRecipe from './components/ReadRecipe';
 import AddRecipe from './components/AddRecipe';
 import Footer from './components/Footer';
+import NavBar from './components/NavBar';
 
 function App() {
 
@@ -25,14 +25,14 @@ function App() {
 
   return (
     <BrowserRouter>
-      <NavBar />
+    <NavBar />
       <Routes>
         <Route exact path='/' element={<Home images={images}/>}/>
         <Route exact path='/food/:id' element={<ReadRecipe/>}/>
         <Route exact path='/food' element={<Food recipes={recipes}/>}/>
         <Route path = '/add'  element={<AddRecipe recipes={recipes} setRecipes={setRecipes}/>}  />
       </Routes>
-      <Footer/>
+    <Footer/>
     </BrowserRouter>
   );
 }
