@@ -58,9 +58,6 @@ function Search({ recipes }){
                         </li>
                     ))}
                     </ol>
-                    
-
-
                 </div>
             )}
 
