@@ -4,6 +4,7 @@ import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import "./Home.css";
 import sliderData from "./sliderData";
 import FeaturedRecipe from "./FeaturedRecipe";
+import { NavLink } from "react-router-dom";
 
 function Home({recipes}) {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -51,7 +52,9 @@ function Home({recipes}) {
                             <div className="content">
                                 <h2>{slide.title}</h2>
                                 <p>{slide.body}</p>
-                                <button className="homebtn">Get Started</button>
+                                <p className="homebtn">
+                                    <NavLink exact to="/food">Get Started</NavLink>
+                                </p>
                             </div>
                         </>
                     )}
