@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./Search.css"
 
 function Search({ recipes }){
 
@@ -24,7 +25,7 @@ function Search({ recipes }){
     }
     
     return (  
-        <div>
+        <div className="search-container">
             <form onSubmit={handleSubmit}>
                 <input type="text" onChange={handleSearch} placeholder="Food..."/>
                 <button type="submit" >Search</button>
@@ -33,7 +34,7 @@ function Search({ recipes }){
             {error && <p>{error}</p>}
 
             {searchResult && (
-                <div>
+                <div className="results-container">
                     <h2>{searchResult.name}</h2>
                     <p>Cuisine: {searchResult.cuisine}</p>
                     <p>Difficulty: {searchResult.difficulty}</p>
