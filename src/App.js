@@ -8,6 +8,7 @@ import AddRecipe from './components/AddRecipe';
 import Footer from './components/Footer';
 import NavBar from './components/NavBar';
 
+
 function App() {
 
   const [recipes, setRecipes] = useState([]);
@@ -18,7 +19,7 @@ function App() {
     .then((data) => setRecipes(data))
     .catch(error => {
       console.error("Error fetching data:", error);
-  })
+    })
   }, [])
 
   const images = recipes.map((recipe) => recipe.image)  
@@ -37,5 +38,4 @@ function App() {
   );
 }
 
-
-  export default App;
+export default App;
