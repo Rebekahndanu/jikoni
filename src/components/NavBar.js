@@ -7,14 +7,14 @@ function NavBar () {
         <nav id="navbar">
             <ul>
                 <li id="jikoni-navbar">
-                    <NavLink exact to="/">Jikoni</NavLink>
+                    <NavLink exact='true' to="/">Jikoni</NavLink>
                 </li>
                 <li>
-                    <NavLink exact to="/">Home</NavLink>
+                    <NavLink exact='true' to="/">Home</NavLink>
                 </li><li>
-                    <NavLink exact to="/food">Food</NavLink>
+                    <NavLink exact='true' to="/food">Food</NavLink>
                 </li><li>
-                    <NavLink exact to="/add">Add Recipe</NavLink>
+                    <NavLink exact='true' to="/add">Add Recipe</NavLink>
                 </li>
             </ul>
         </nav>

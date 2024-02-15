@@ -5,7 +5,7 @@ import "./Home.css";
 import sliderData from "./sliderData";
 import FeaturedRecipe from "./FeaturedRecipe";
 
-function Home() {
+function Home({recipes}) {
     const [currentIndex, setCurrentIndex] = useState(0);
     const slideLength = sliderData.length;
 
@@ -59,7 +59,7 @@ function Home() {
                 </div>
             ))}
         </div>
-        <FeaturedRecipe />
+        <FeaturedRecipe recipes={recipes}/>
         </>
         
     );
