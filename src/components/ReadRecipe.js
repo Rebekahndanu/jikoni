@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import "./ReadRecipe.css"
 
 function ReadRecipe () {
 
@@ -19,24 +20,38 @@ function ReadRecipe () {
 
     return (
         <>
-            <div>
+            <div className="view-recipe-container">
                 <h2>{recipe.name}</h2>
                 <img src={recipe.image} alt="food"/>
-                <p>Cuisine: {recipe.cuisine}</p>
-                <p>Difficulty: {recipe.difficulty}</p>
-                <p>It takes {recipe['prep-time']} to prepare</p>
-                <p>It takes {recipe['cook-time']} to cook</p>
-                <p>It takes {recipe['total-time']} to cook and prepare</p>
-                <p>The meal serves {recipe.serving} people</p>
-                <p>Description: {recipe.description}</p>
-                <ul>Ingredients:
+                <div class="recipe-container">
+                    <div class="recipe-feature">
+                        <p>Cuisine: {recipe.cuisine}</p>
+                    </div>
+                    <div class="recipe-feature">
+                        <p>Difficulty: {recipe.difficulty}</p>
+                    </div>
+                    <div class="recipe-feature">
+                        <p>Prep time: {recipe['prep-time']}</p>
+                    </div>
+                    <div class="recipe-feature">
+                        <p>Cooking time: {recipe['cook-time']}</p>
+                    </div>
+                    <div class="recipe-feature">
+                        <p>Total: {recipe['total-time']}</p>
+                    </div>
+                    <div class="recipe-feature">
+                        <p>Serving: {recipe.serving}</p>
+                    </div>
+                </div>
+                <p>{recipe.description}</p>
+                <ul><h4>Ingredients</h4>
                 {recipe.ingredients.map((ingredient, index)=>(
                     <li key={index}>
                         {ingredient}
                     </li>
                 ))}
                 </ul>
-                <ol> Instructions:
+                <ol> <h4>Instructions</h4>
                     {recipe.instructions.map((intstruction, index)=>(
                         <li key={index}>
                             {intstruction}
