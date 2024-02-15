@@ -11,9 +11,10 @@ function NavBar () {
                     <NavLink exact to="/">Home</NavLink> 
                 </li>
                 <li>
+                    <NavLink exact to="/">Home</NavLink>
+                </li><li>
                     <NavLink exact to="/food">Food</NavLink>
-                </li>
-                <li className="home-button">
+                </li><li>
                     <NavLink exact to="/add">Add Recipe</NavLink>
                 </li>
             </ul>
