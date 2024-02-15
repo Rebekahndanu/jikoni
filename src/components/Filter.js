@@ -14,7 +14,7 @@ function Filter({ recipes }) {
 
     return (
         <div>
-            <div>
+            <div className='difficulty-filter'>
                 <button onClick={() => handleChange('All')}>All</button>
                 <button onClick={() => handleChange('Easy')}>Easy</button>
                 <button onClick={() => handleChange('Intermediate')}>Intermediate</button>

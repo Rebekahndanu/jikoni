@@ -4,8 +4,8 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000; 
-
+  z-index: 1;
+  background-color: transparent; 
 }
 
 #navbar ul {
@@ -37,4 +37,20 @@
 
 .top-image {
   width: 400px;
+}
+
+.searchbar{
+  position: fixed;
+  top: 2%;
+  left: 30%;
+  width: 300px;
+  z-index: 2;
+}
+
+.difficulty-filter{
+  position: fixed;
+  top: 5%;
+  left: 30%;
+  width: 300px;
+  z-index: 2;
 }

@@ -1,6 +1,9 @@
-export default function footer () {
+import "./footer.css";
+
+
+export default function Footer () {
    return (
-    <div className="footer container">
+    <div className="footer">
         <div className="footer-section">
             <p className="title">Jikoni.com</p>
             <p>The fabric of Jikoni was born ot of love and respect for these humble deli
