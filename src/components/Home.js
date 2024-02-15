@@ -51,7 +51,6 @@ function Home() {
                             <div className="content">
                                 <h2>{slide.title}</h2>
                                 <p>{slide.body}</p>
-                                <hr />
                                 <button className="homebtn">Get Started</button>
                             </div>
                         </>

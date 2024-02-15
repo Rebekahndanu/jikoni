@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import "./Featured.css"
+import "./Featured.css";
 
 const FeaturedRecipe = () => {
   const [featuredRecipe, setFeaturedRecipe] = useState(null);
@@ -25,17 +25,18 @@ const FeaturedRecipe = () => {
       <h2 className="featured-recipe-title">Featured Recipe</h2>
       {featuredRecipe ? (
         <div className="featured-recipe">
+          <div className="recipe-details">
+            <h2>Our Featured Recipe of the Week</h2>
+            <h3 className="recipe-title">{featuredRecipe.name}</h3>
+            <p className="recipe-description">Cuisine: {featuredRecipe.cuisine}</p>
+            <p className="recipe-description">Difficulty: {featuredRecipe.difficulty}</p>
+            <button className='recipe-button'>View Recipe</button>
+          </div>
           <img
             src={featuredRecipe.image} 
             alt={featuredRecipe.name}
             className="recipe-image"
           />
-          <div className="recipe-details">
-            <h3 className="recipe-title">{featuredRecipe.name}</h3>
-            <p className="recipe-description">Cuisine: {featuredRecipe.cuisine}</p>
-            <p className="recipe-description">Difficulty: {featuredRecipe.difficulty}</p>
-            <button>View Recipe</button>
-          </div>
         </div>
       ) : (
         <p>Loading featured recipe...</p>

@@ -1,6 +1,5 @@
  import Search from "./Search";
  import Filter from "./Filter";
- import "./Food.css"
 
  function Food({ recipes }){
 

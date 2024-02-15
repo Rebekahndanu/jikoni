@@ -29,10 +29,20 @@
     width: 50%;
     padding: 3rem;
     color: #fff;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.5);
     animation: slide-up 1s ease .5s;
     animation-fill-mode: forwards;
     visibility: hidden; 
+}
+
+.content h2{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.content p {
+    font-size: 20px;
+    margin-bottom: 20px;
 }
 
 .current .content {
@@ -62,12 +72,6 @@
 
 .prev {
     left: 1.5rem;
-}
-
-hr {
-    height: 2px;
-    background-color: #fff;
-    width: 50%;
 }
 
 @keyframes slide-up {
@@ -100,7 +104,11 @@ hr {
 }
 
 .homebtn {
-    background-color: maroon;
+    background-color: brown;
     color: #fff;
-    padding: 12px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 10px;
 }

@@ -25,7 +25,7 @@ function Search({ recipes }){
     }
     
     return (  
-        <div>
+        <div className="searchbar-btn">
             <form className="searchbar" onSubmit={handleSubmit}>
                 <input type="text" onChange={handleSearch} placeholder="Food..."/>
                 <button type="submit" >Search</button>
