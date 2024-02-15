@@ -1,4 +1,5 @@
-fetch('/Users/user/Desktop/Moringa-Schools/jikoni/db.json')
+// Fetch for displaying only the name and image
+fetch('https://jikoni-vercel.vercel.app/recipes')
   .then(response => response.json())
   .then(data => {
     // Access the recipes array in the JSON data
@@ -13,7 +14,8 @@ fetch('/Users/user/Desktop/Moringa-Schools/jikoni/db.json')
   })
   .catch(error => console.error('Error fetching data:', error));
 
-  fetch('/Users/user/Desktop/Moringa-Schools/jikoni/db.json') 
+// Fetch for displaying all information
+fetch('https://jikoni-vercel.vercel.app/recipes') 
   .then(response => response.json())
   .then(data => {
     // Access the recipes array in the JSON data
