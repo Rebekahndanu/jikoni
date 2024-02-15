@@ -1,31 +1,41 @@
 import React, { useState, useEffect } from 'react';
+import "./Featured.css"
 
 const FeaturedRecipe = () => {
   const [featuredRecipe, setFeaturedRecipe] = useState(null);
   const apiURL = 'https://jikoni-vercel.vercel.app/recipes';
 
   useEffect(() => {
-    // Fetch featured recipe data
     fetch(apiURL)
       .then((response) => response.json())
       .then((data) => {
-        // Assuming your API response is an array of recipes
-        // You may need to adjust this based on your API structure
-        const randomIndex = Math.floor(Math.random() * data.length);
-        const randomRecipe = data[randomIndex];
-        setFeaturedRecipe(randomRecipe);
+        if (data && Array.isArray(data) && data.length > 0) {
+          const randomIndex = Math.floor(Math.random() * data.length);
+          const randomRecipe = data[randomIndex];
+          setFeaturedRecipe(randomRecipe);
+        } else {
+          console.error('Invalid:', data);
+        }
       })
       .catch((error) => console.error('Error fetching data:', error));
-  }, []); // Empty dependency array ensures useEffect runs only once on component mount
+  }, []);
 
   return (
-    <div>
-      <h2>Featured Recipe</h2>
+    <div className="featured-recipe-container">
+      <h2 className="featured-recipe-title">Featured Recipe</h2>
       {featuredRecipe ? (
-        <div>
-          <h3>{featuredRecipe.title}</h3>
-          <p>{featuredRecipe.description}</p>
-          {/* Add more details as needed */}
+        <div className="featured-recipe">
+          <img
+            src={featuredRecipe.image} 
+            alt={featuredRecipe.name}
+            className="recipe-image"
+          />
+          <div className="recipe-details">
+            <h3 className="recipe-title">{featuredRecipe.name}</h3>
+            <p className="recipe-description">Cuisine: {featuredRecipe.cuisine}</p>
+            <p className="recipe-description">Difficulty: {featuredRecipe.difficulty}</p>
+            <button>View Recipe</button>
+          </div>
         </div>
       ) : (
         <p>Loading featured recipe...</p>
