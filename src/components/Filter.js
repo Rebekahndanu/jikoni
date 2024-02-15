@@ -32,8 +32,8 @@ function Filter({ recipes }) {
                         <p className='food-description'>Cuisine: {recipe.cuisine}</p>
                         <p className='food-description'>Difficulty: {recipe.difficulty}</p>
                         <p className='food-description'>Serving: {recipe.serving}</p>
-                        <p className='get-button'>
-                            <NavLink to={`/food/${recipe.id}`}>Get Recipe</NavLink>  
+                        <p>
+                            <NavLink to={`/food/${recipe.id}`} className='recipe-link-button'>Get Recipe</NavLink>
                         </p>
                     </div>
                 ))}

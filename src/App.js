@@ -30,7 +30,7 @@ function App() {
         <Route exact path='/food/:id' element={<ReadRecipe/>}/>
         <Route exact path='/food' element={<Food recipes={recipes}/>}/>
       </Routes>
-      <Footer/>
+    <Footer/>
     </BrowserRouter>
   );
 }
