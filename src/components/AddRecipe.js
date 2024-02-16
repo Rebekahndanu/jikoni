@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import "./AddRecipe.css"
 
 function AddRecipe() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const [recipe, setRecipe] = useState({
     id: 0, // This will be handled on the server side
@@ -17,6 +17,7 @@ function AddRecipe() {
     serving: '',
     image: '',
     ingredients: [],
+    instructions: [],
   });
 
   const handleInputChange = (e) => {
@@ -28,6 +29,12 @@ function AddRecipe() {
     const newIngredients = [...recipe.ingredients];
     newIngredients[index] = e.target.value;
     setRecipe({ ...recipe, ingredients: newIngredients });
+  };
+
+  const handleInstructionsChange = (e, index) => {
+    const newInstructions = [...recipe.instructions];
+    newInstructions[index] = e.target.value;
+    setRecipe({...recipe, instructions: newInstructions})
   };
 
   const handleSubmit = (e) => {
@@ -44,12 +51,12 @@ function AddRecipe() {
       .then((response) => response.json())
       .then((data) => {
         console.log('Recipe posted successfully:', data);
-        navigate.push('/food')
         // Redirect or perform other actions after successful submission
       })
       .catch((error) => {
         console.error('Error posting recipe:', error);
-      });
+      })
+      navigate('/food')
   };
 
   return (
@@ -104,6 +111,22 @@ function AddRecipe() {
             Add Ingredient
           </button>
         </label><br/>
+        <label className='form-label'>
+          Instructions:
+          {recipe.instructions.map((instruction, index) => (
+            <input
+              className='form-input'
+              key={index}
+              type="text"
+              value={instruction}
+              onChange={(e) => handleInstructionsChange(e, index)}
+              required
+            />
+          ))}
+          <button type="button" onClick={() => setRecipe({ ...recipe, instructions: [...recipe.instructions, ''] })}>
+            Add Instruction
+          </button>
+        </label><br/>    
         <button className='submit-button' type="submit">Submit</button>
       </form>
     </div>

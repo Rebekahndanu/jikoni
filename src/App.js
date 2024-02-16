@@ -20,7 +20,7 @@ function App() {
     .catch(error => {
       console.error("Error fetching data:", error);
     })
-  }, [])
+  }, [recipes])
 
   const images = recipes.map((recipe) => recipe.image)  
 
