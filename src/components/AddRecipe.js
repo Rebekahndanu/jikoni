@@ -1,10 +1,7 @@
 // src/AddRecipe.js
 import React, { useState } from 'react';
-<<<<<<< HEAD
 import "./AddRecipe.css"
-=======
 import { useNavigate } from 'react-router-dom'
->>>>>>> mike
 
 function AddRecipe() {
   const navigate = useNavigate()
