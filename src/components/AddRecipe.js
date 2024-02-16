@@ -1,9 +1,10 @@
 // src/AddRecipe.js
 import React, { useState } from 'react';
+import "./AddRecipe.css"
 
 function AddRecipe() {
   const [recipe, setRecipe] = useState({
-    id: 0, // This will be handled on the server side
+    id: 0,
     name: '',
     cuisine: '',
     difficulty: '',
@@ -28,8 +29,6 @@ function AddRecipe() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Perform your POST request here using fetch or another library
-    // Example fetch:
     fetch('https://jikoni-vercel.vercel.app/recipes', {
       method: 'POST',
       headers: {
@@ -48,49 +47,50 @@ function AddRecipe() {
   };
 
   return (
-    <div>
-      <h2>Add Recipe</h2>
-      <form onSubmit={handleSubmit}>
-        <label>
+    <div className="add-recipe-container">
+      <h2 className="recipe-heading">Add Recipe</h2>
+      <form className="recipe-form" onSubmit={handleSubmit}>
+        <label className="form-label">
           Recipe Name:
-          <input type="text" name="name" value={recipe.name} onChange={handleInputChange} required />
+          <input className="form-input" type="text" name="name" value={recipe.name} onChange={handleInputChange} required />
         </label><br/>
-        <label>
+        <label className="form-label">
           Cuisine:
-          <input type="text" name="cuisine" value={recipe.cuisine} onChange={handleInputChange} required />
+          <input className="form-input" type="text" name="cuisine" value={recipe.cuisine} onChange={handleInputChange} required />
         </label><br/>
-        <label>
+        <label className="form-label">
           Difficulty:
-          <input type="text" name="difficulty" value={recipe.difficulty} onChange={handleInputChange} required />
+          <input className="form-input" type="text" name="difficulty" value={recipe.difficulty} onChange={handleInputChange} required />
         </label><br/>
-        <label>
+        <label className="form-label">
           Prep Time:
-          <input type="text" name="prep-time" value={recipe['prep-time']} onChange={handleInputChange} required />
+          <input className="form-input" type="text" name="prep-time" value={recipe['prep-time']} onChange={handleInputChange} required />
         </label><br/>
-        <label>
+        <label className="form-label">
           Cook Time:
-          <input type="text" name="cook-time" value={recipe['cook-time']} onChange={handleInputChange} required />
+          <input className="form-input" type="text" name="cook-time" value={recipe['cook-time']} onChange={handleInputChange} required />
         </label><br/>
-        <label>
+        <label className="form-label">
           Total Time:
-          <input type="text" name="total-time" value={recipe['total-time']} onChange={handleInputChange} required />
+          <input className="form-input" type="text" name="total-time" value={recipe['total-time']} onChange={handleInputChange} required />
         </label><br/>
-        <label>
+        <label className="form-label">
           Serving:
-          <input type="text" name="serving" value={recipe.serving} onChange={handleInputChange} required />
+          <input className="form-input" type="text" name="serving" value={recipe.serving} onChange={handleInputChange} required />
         </label><br/>
-        <label>
+        <label className="form-label">
           Image URL:
-          <input type="text" name="image" value={recipe.image} onChange={handleInputChange} required />
+          <input className="form-input" type="text" name="image" value={recipe.image} onChange={handleInputChange} required />
         </label><br/>
-        <label>
+        <label className="form-label">
           Ingredients:
-          {recipe.ingredients.map((ingredient, index) => (
+           {recipe.ingredients.map((ingredient, index) => (
             <input
               key={index}
               type="text"
               value={ingredient}
               onChange={(e) => handleIngredientsChange(e, index)}
+              className="form-input"
               required
             />
           ))}
@@ -98,7 +98,7 @@ function AddRecipe() {
             Add Ingredient
           </button>
         </label><br/>
-        <button type="submit">Submit</button>
+        <button className="submit-button" type="submit">Submit</button>
       </form>
     </div>
   );

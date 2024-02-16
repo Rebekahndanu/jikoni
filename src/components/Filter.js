@@ -6,7 +6,7 @@ function Filter({ recipes }) {
     const [difficultyFilter, setDifficultyFilter] = useState('All');
 
     const handleChange = (difficulty) => {
-        setDifficultyFilter(difficulty)
+        setDifficultyFilter(difficulty);
     };
 
     // Filter recipes based on the difficulty level
@@ -15,10 +15,10 @@ function Filter({ recipes }) {
     return (
         <div>
             <div className='difficulty-filter'>
-                <button onClick={() => handleChange('All')}>All</button>
-                <button onClick={() => handleChange('Easy')}>Easy</button>
-                <button onClick={() => handleChange('Intermediate')}>Intermediate</button>
-                <button onClick={() => handleChange('Hard')}>Hard</button>
+                <button className={difficultyFilter === 'All' ? 'active' : ''} onClick={() => handleChange('All')}>All</button>
+                <button className={difficultyFilter === 'Easy' ? 'active' : ''} onClick={() => handleChange('Easy')}>Easy</button>
+                <button className={difficultyFilter === 'Intermediate' ? 'active' : ''} onClick={() => handleChange('Intermediate')}>Intermediate</button>
+                <button className={difficultyFilter === 'Hard' ? 'active' : ''} onClick={() => handleChange('Hard')}>Hard</button>
             </div>
             <div className='recipe-container'>
                 {filteredRecipes.map((recipe) => (

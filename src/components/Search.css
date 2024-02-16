@@ -7,7 +7,7 @@
     margin-right: auto;
 }
 
-input {
+.searchbar input {
     flex-grow: 1;
     padding: 10px;
     border: 1px solid #ccc;
