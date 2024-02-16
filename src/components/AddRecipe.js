@@ -1,8 +1,14 @@
 // src/AddRecipe.js
 import React, { useState } from 'react';
+<<<<<<< HEAD
 import "./AddRecipe.css"
+=======
+import { useNavigate } from 'react-router-dom'
+>>>>>>> mike
 
 function AddRecipe() {
+  const navigate = useNavigate()
+
   const [recipe, setRecipe] = useState({
     id: 0,
     name: '',
@@ -39,6 +45,7 @@ function AddRecipe() {
       .then((response) => response.json())
       .then((data) => {
         console.log('Recipe posted successfully:', data);
+        navigate.push('/food')
         // Redirect or perform other actions after successful submission
       })
       .catch((error) => {
