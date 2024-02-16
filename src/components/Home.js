@@ -53,7 +53,7 @@ function Home({recipes}) {
                                 <h2>{slide.title}</h2>
                                 <p>{slide.body}</p>
                                 <p className="homebtn">
-                                    <NavLink exact to="/food">Get Started</NavLink>
+                                    <NavLink exact='true' to="/food">Get Started</NavLink>
                                 </p>
                             </div>
                         </>
