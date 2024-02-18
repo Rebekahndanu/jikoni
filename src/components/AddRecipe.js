@@ -1,4 +1,3 @@
-// src/AddRecipe.js
 import React, { useState } from 'react';
 import "./AddRecipe.css"
 import { useNavigate } from 'react-router-dom'
