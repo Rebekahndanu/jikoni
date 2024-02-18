@@ -48,7 +48,6 @@ function AddRecipe() {
       .then((response) => response.json())
       .then((data) => {
         console.log('Recipe posted successfully:', data);
-        // Redirect or perform other actions after successful submission
       })
       .catch((error) => {
         console.error('Error posting recipe:', error);
