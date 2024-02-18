@@ -6,7 +6,7 @@ function AddRecipe() {
   const navigate = useNavigate();
 
   const [recipe, setRecipe] = useState({
-    id: 0, // This will be handled on the server side
+    id: 0, 
     name: '',
     cuisine: '',
     difficulty: '',
@@ -38,8 +38,6 @@ function AddRecipe() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Perform your POST request here using fetch or another library
-    // Example fetch:
     fetch('https://jikoni-vercel.vercel.app/recipes', {
       method: 'POST',
       headers: {
@@ -50,12 +48,11 @@ function AddRecipe() {
       .then((response) => response.json())
       .then((data) => {
         console.log('Recipe posted successfully:', data);
-        // Redirect or perform other actions after successful submission
+        navigate.push('/food')
       })
       .catch((error) => {
         console.error('Error posting recipe:', error);
       })
-      navigate('/food')
   };
 
   return (
